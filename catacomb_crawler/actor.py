@@ -1,7 +1,7 @@
 import random
 
 class Actor:
-    def __init__(self, name: str, health: int, max_damage: int, x: int, y: int) -> "Actor":
+    def __init__(self, name: str, health: int, max_damage: int, x: int, y: int) -> None:
         self.name = name
         self.health = health
         self.max_damage = max_damage
