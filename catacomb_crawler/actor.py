@@ -35,17 +35,25 @@ class Actor:
         actor_was_moved: bool = True
         match (direction):
             case ("east"):
-                if self.x == size - 1: actor_was_moved = False
-                self.x += 1
+                if self.x == size - 1: 
+                    actor_was_moved = False
+                else:
+                    self.x += 1
             case ("west"):
-                if self.x == 0: actor_was_moved = False
-                self.x -= 1
+                if self.x == 0: 
+                    actor_was_moved = False
+                else:
+                    self.x -= 1
             case ("south"):
-                if self.y == size - 1: actor_was_moved = False
-                self.y += 1
+                if self.y == size - 1: 
+                    actor_was_moved = False
+                else:
+                    self.y += 1
             case ("north"):
-                if self.y == 0: actor_was_moved = False
-                self.y -= 1
+                if self.y == 0: 
+                    actor_was_moved = False
+                else:
+                    self.y -= 1
             case (_):
                 actor_was_moved = False
         return actor_was_moved
