@@ -9,7 +9,10 @@ set -e
 # Returns:
 #   None 
 function print_python_template() {
-    echo -e "print(f\"Hello world from \'{__file__}\'!\")" >> "$1"
+    echo -e "def main() -> None:" >> "$1"
+    echo -e "\tprint(f\"Hello world from \'{__file__}\'!\")\n\n" >> "$1"
+    echo -e "if __name__ == \"__main__\":" >> "$1"
+    echo -e "\tmain()" >> "$1"
 }
 
 # print_README_template: 
