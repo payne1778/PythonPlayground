@@ -1,5 +1,5 @@
 from actor import Actor
-import random
+import sys, random
 
 def make_hero() -> Actor:
     print("What is your name, heroic adventurer?")
@@ -56,8 +56,7 @@ def fight(hero: Actor, monsters: list[Actor]) -> None:
 				print(f"You get hit for {monster.deal_damage(hero)} damage")
 			
 			if not hero.is_alive():
-				print("You died in combat! Game over!")
-				exit
+				sys.exit("You died in combat! Game over!")
 			else:
 				print(f"{monster.name} has been defeated!")
 				monsters.remove(monster)
@@ -81,13 +80,11 @@ def move(hero: Actor, monsters: list[Actor], size: int) -> None:
 		print("You can't move that way!")
 	else: 
 		if hero.has_escaped(size):
-			print("You have escaped the catacomb!")
-			exit
+			sys.exit("You have escaped the catacomb!")
 
 		hero.health -= 2
 		if not hero.is_alive():
-			print("You died in the catacomb! Game over!")
-			exit
+			sys.exit("You died in the catacomb! Game over!")
 
 		fight(hero, monsters)
 		print_hero_and_smell_count(hero, monsters)
